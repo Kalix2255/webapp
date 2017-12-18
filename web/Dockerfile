@@ -5,7 +5,7 @@ ENV API_HOST="localhost:5000"
 ENV NODE_ENV='production'
 
 WORKDIR /app
-COPY package.json .
+COPY web/package.json .
 
 
 
