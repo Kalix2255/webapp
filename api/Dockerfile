@@ -5,11 +5,11 @@ ENV DB="postgres://admin:admin@database/api"
 ENV NODE_ENV='production'
 
 WORKDIR /app
-COPY package.json .
+COPY api/package.json .
 
 
-COPY bin /app/bin
-COPY app.js /app/app.js
+COPY api/bin /app/bin
+COPY api/app.js /app/app.js
 
 USER node
 
