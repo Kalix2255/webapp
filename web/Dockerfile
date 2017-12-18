@@ -9,11 +9,11 @@ COPY web/package.json .
 
 
 
-COPY bin /app/bin
-COPY public /app/public
-COPY routes /app/routes
-COPY views /app/views
-COPY app.js /app/app.js
+COPY web/bin /app/bin
+COPY web/public /app/public
+COPY web/routes /app/routes
+COPY web/views /app/views
+COPY web/app.js /app/app.js
 
 EXPOSE 8080
 USER node
