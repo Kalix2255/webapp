@@ -15,5 +15,6 @@ USER node
 
 EXPOSE 5000
 
-RUN sudo npm install
+npm install -g npm
+
 CMD ["npm", "start"]

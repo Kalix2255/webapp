@@ -17,5 +17,5 @@ COPY web/app.js /app/app.js
 
 EXPOSE 8080
 USER node
-RUN sudo npm install
+npm install -g npm
 CMD ["npm", "start"]
