@@ -20,7 +20,7 @@ services:
             parallelism: 3
             delay: 10s
         restart_policy:
-            condition: always
+            condition: on-failure
 
   api:
     build: ./api+
@@ -37,7 +37,7 @@ services:
             parallelism: 3
             delay: 10s
         restart_policy:
-            condition: always
+            condition: on-failure
     depends_on:
         postgres-database:
             condition: service_healthy
@@ -51,6 +51,8 @@ services:
     deploy:
         update_config:
             failure_action: rollback
+        restart_policy:
+            condition: on-failure
     healthcheck:
         test: ["CMD-SHELL", "pg_isready"]
         interval: 30s
