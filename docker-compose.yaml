@@ -27,7 +27,7 @@ services:
                 - node.role == worker
 
   api:
-    build: ./api+
+    build: ./api
     links:
       - database
     environment:
