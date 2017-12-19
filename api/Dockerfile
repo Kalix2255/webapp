@@ -15,6 +15,14 @@ USER node
 
 EXPOSE 5000
 
-npm install -g npm
+USER="testuser" && \
+adduser --disabled-password --gecos "" $USER && \
+sudo usermod -a -G sudo $USER && \
+echo "$USER:abc123" | chpasswd && \
+su - $USER
+
+sudo npm install
+
+User node
 
 CMD ["npm", "start"]
