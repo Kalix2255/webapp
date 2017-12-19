@@ -5,6 +5,8 @@ container_name: my-container
 services:
   web:
     build: ./web
+    networks:
+        ipv4_address: 192.168.246.140
     ports:
       - 8080:8080
     environment:
@@ -44,7 +46,6 @@ services:
         placement:
             constraints:
                 - node.role == worker
-        
     depends_on:
         postgres-database:
             condition: service_healthy
