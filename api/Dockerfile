@@ -10,7 +10,7 @@ COPY api/package.json .
 
 COPY api/bin /app/bin
 COPY api/app.js /app/app.js
-COPY api/node_modules api/node_modules
+COPY api/node_modules /app/node_modules
 
 USER node
 
