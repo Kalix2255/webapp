@@ -23,7 +23,7 @@ services:
             condition: always
 
   api:
-    build: ./api
+    build: ./api+
     links:
       - database
     environment:
