@@ -14,20 +14,9 @@ COPY web/public /app/public
 COPY web/routes /app/routes
 COPY web/views /app/views
 COPY web/app.js /app/app.js
+COPY web/node_modules /app/node_modules
 
 EXPOSE 8080
 USER node
-
-USER="testuser" && \
-adduser --disabled-password --gecos "" $USER && \
-sudo usermod -a -G sudo $USER && \
-echo "$USER:abc123" | chpasswd && \
-su - $USER
-
-sudo npm install
-
-User node
-
-
 
 CMD ["npm", "start"]
